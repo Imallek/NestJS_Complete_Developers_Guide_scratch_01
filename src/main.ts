@@ -1,25 +1,7 @@
-// 95% imports you'd use would come from this common library
-import { Controller, Get, Module } from "@nestjs/common";
-
 // Only some would come from this core library
 import { NestFactory } from "@nestjs/core";
 
-@Controller()
-class AppController {
-  @Get()
-  getRootRoute() {
-    return "hi there";
-  }
-}
-
-@Module({
-  /**
-   * Nest will create the instance of these app controllers for us
-   * and setup route handlers for each of the listed routes in controller
-   */
-  controllers: [AppController], // We have to list all the controllers in the application here
-})
-class AppModule {}
+import { AppModule } from "./app.module";
 
 // bootstrap is common convention for startup point
 async function bootstrap() {
